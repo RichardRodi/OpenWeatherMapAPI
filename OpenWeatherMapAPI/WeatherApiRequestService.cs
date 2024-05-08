@@ -21,27 +21,27 @@ namespace OpenWeatherMapAPI
                     {
                         Console.WriteLine("Valid ZipCode:\n");
                         var apiCall = $"https://api.openweathermap.org/data/2.5/weather?zip={zipCode}&units=imperial&appid={APIKey}";
-                        Console.WriteLine($"\n\t\tIt is currently {WeatherMap.GetTemp(apiCall)} degrees!\n");
+                        Console.WriteLine($"\n\t\tIt is currently {WeatherMapClient.GetTemp(apiCall)} Degrees Fahrenheit!\n");
                         Console.ReadKey();
                         MainMenu.RunMainMenu();
                     }
                     else
                     {
-                        Console.WriteLine("\t\tPlease enter a valid ZipCode.");
+                        Console.WriteLine("\tPlease enter a valid ZipCode.");
                     }
                 }
                 catch (HttpRequestException)
                 {
-                    Console.WriteLine("\n\t\tThe entered ZipCode is not found. Please enter a valid ZipCode.\n");
+                    Console.WriteLine("\n\tThe entered ZipCode is not found. Please enter a valid ZipCode.\n");
                 }
                 catch (AggregateException ex)
                 {
-                    Console.WriteLine($"\n\t\tAn Error Occurred. {ex.Message} Please enter a valid zipcode\n");
+                    Console.WriteLine($"\n\tAn Error Occurred. {ex.Message} Please enter a valid zipcode\n");
 
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"\n\t\tAn Error Occurred. {ex.Message} Please enter a valid zipcode\n");
+                    Console.WriteLine($"\n\tAn Error Occurred. {ex.Message} Please enter a valid zipcode\n");
                 }
               
             }
@@ -68,7 +68,7 @@ namespace OpenWeatherMapAPI
                     {
                         
                         var apiCall = $"https://api.openweathermap.org/data/2.5/weather?q={cityName},{stateCode},{countryCode}&units=imperial&appid={APIKey}";
-                        Console.WriteLine($"\n\t\tIt is currently {WeatherMap.GetTemp(apiCall)} degrees!\n");
+                        Console.WriteLine($"\n\tIt is currently {WeatherMapClient.GetTemp(apiCall)} Degrees Fahrenheit!\n");
                         Console.ReadKey();
                         MainMenu.RunMainMenu();
                     }
@@ -79,17 +79,17 @@ namespace OpenWeatherMapAPI
                 }
                 catch (HttpRequestException)
                 {
-                    Console.WriteLine("\n\t\tThe entered City is not found. Please enter a valid City.\n");
+                    Console.WriteLine("\n\tThe entered City is not found. Please enter a valid City.\n");
                 }
                 catch (AggregateException ex)
                 {
-                    Console.WriteLine($"\n\t\tAn Error Occurred.\n{ex.Message}\n" +
+                    Console.WriteLine($"\n\tAn Error Occurred.\n{ex.Message}\n" +
                         $"\tPlease enter a valid City.\n");
 
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"\n\t\tAn Error Occurred.\n{ex.Message}\n" +
+                    Console.WriteLine($"\n\tAn Error Occurred.\n{ex.Message}\n" +
                         $"\tPlease enter a valid City.\n");
                 }
 

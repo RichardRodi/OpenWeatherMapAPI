@@ -2,7 +2,7 @@
 
 namespace OpenWeatherMapAPI
 {
-    public class WeatherMap
+    public class WeatherMapClient
     {
         public static double GetTemp(string apiCall)
         {

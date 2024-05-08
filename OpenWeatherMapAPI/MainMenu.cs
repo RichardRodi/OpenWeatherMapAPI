@@ -8,11 +8,11 @@
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             
             {
-                string prompt = ($"\n\n\n\t\t\t ☁  ☁  ☁  Open Weather API ☁  ☁  ☁ \n\n\n" +
+                string prompt = ($"\n\n\n\t\t\t ☁  ☁  ☁  Open Weather Map API ☁  ☁  ☁ \n\n\n" +
                     $"{ArtAssets.Sunset}\n\n\n" +
-                    $"\t\t\tFind the Current Temperature (USA) by ZipCode or by State\n");
+                    $"\t\tFind the Current Temperature in the USA by ZipCode or by State.\n");
 
-                string[] options = { "1.Find by Zipcode", "2.Find by City and State",};
+                string[] options = { "1.Find by Zipcode.", "2.Find by City and State.",};
                 Menu menu = new Menu(prompt, options);
                 int selectedIndex = menu.Run();
 
